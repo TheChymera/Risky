@@ -1,4 +1,4 @@
-#Risk
+#Risky
 
 Python functions with a convenient command line interface (`risky_cli.py`) to calculate the odds for single-attack battles in Risk-like games.
 The function lets you specify many variations including number of attacking units, defending units, and even dice sides.
