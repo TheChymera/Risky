@@ -19,7 +19,7 @@ risky_cli.py -d 7 4 1
 
 ##Arguments
 
-```bash
+```
 positional arguments:
   attackers             number of attacking units (integer 1 to 3)
   defenders             number of defending units (integer 1 to 2)
