@@ -13,6 +13,12 @@ From the containing folder:
 risky_cli.py [-h] [-f] [-d DICE_SIDES] attackers defenders
 ```
 
+Example (7-sided dice, 4 attacking dice are rolled against 1 defending dice):
+
+```bash 
+risky_cli.py -d 7 4 1
+```
+
 ##Arguments
 
 ```bash
