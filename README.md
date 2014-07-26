@@ -8,13 +8,11 @@ A more in-depth explanation of the formulas, as well as reference odds tables fo
 
 ##Usage
 From the containing folder:
-
-```bash 
+```
 risky_cli.py [-h] [-f] [-d DICE_SIDES] attackers defenders
 ```
 
 Example (7-sided dice, 4 attacking dice are rolled against 1 defending dice):
-
 ```
 risky_cli.py -d 7 4 1
 ```
