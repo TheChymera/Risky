@@ -3,6 +3,7 @@
 Python functions with a convenient command line interface (`risky_cli.py`) to calculate the odds for single-attack battles in Risk-like games.
 The function lets you specify many variations including number of attacking units, defending units, and even dice sides.
 We use either formulaic odds calculation or explicit lookup from tables of all outcome possibilities (the latter being significantly slower for large dice side numbers).
+
 A more in-depth explanation of the formulas, as well as reference odds tables for popular game configurations can be found in the script's [tutorial page](http://chymeric.eu/blog/2014/07/23/per-attack-risk-dice-odds/). 
 
 ##Usage
