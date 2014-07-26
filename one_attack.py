@@ -7,17 +7,17 @@ from itertools import product
 def odds_formulae(attackers, defenders, dice_sides=6, victory=0, tie=0, defeat=0):
     if attackers == 1 and defenders == 2:
 	for n in np.arange(dice_sides)+1:
-	    victory += (n-1)*(dice_sides**attackers-n**attackers)/dice_sides**(attackers+2)
+	    victory += (n-1)*(dice_sides**attackers-n**attackers)/dice_sides**(attackers+defenders)
 	    for m in np.arange(dice_sides-n+1)+n:
-		victory += (dice_sides**attackers-m**attackers)/dice_sides**(attackers+2)
+		victory += (dice_sides**attackers-m**attackers)/dice_sides**(attackers+defenders)
 	defeat = 1 - victory
-    elif attackers == 2 and defenders == 2:
-	for (n,m) in product(np.arange(dice_sides)+1, np.arange(dice_sides)+1):
-		victory += (dice_sides-n)*(dice_sides-m)/dice_sides**4
-	defeat = 1 - victory
+    #~ elif attackers == 2 and defenders == 2:
+	#~ for (n,m) in product(np.arange(dice_sides)+1, np.arange(dice_sides)+1):
+		#~ victory += (dice_sides-n)*(dice_sides-m)/dice_sides**4
+	#~ defeat = 1 - victory
     elif defenders == 1:
 	for n in np.arange(dice_sides)+1:
-	    victory += (dice_sides**attackers-n**attackers)/dice_sides**(attackers+1)
+	    victory += (dice_sides**attackers-n**attackers)/dice_sides**(attackers+defenders)
 	defeat = 1 - victory
     else:
 	print "Automatically switching to lookup-method to determine odds as your specified attacker and defender values have no corresponding odds formula."
