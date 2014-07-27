@@ -11,6 +11,7 @@ def odds_formulae(attackers, defenders, dice_sides=6, victory=0, tie=0, defeat=0
 	    for m in np.arange(dice_sides-n+1)+n:
 		victory += (dice_sides**attackers-m**attackers)/dice_sides**(attackers+defenders)
 	defeat = 1 - victory
+	units_lost = (defeat+tie) / (victory + tie)
     #~ elif attackers == 2 and defenders == 2:
 	#~ for (n,m) in product(np.arange(dice_sides)+1, np.arange(dice_sides)+1):
 		#~ victory += (dice_sides-n)*(dice_sides-m)/dice_sides**4
@@ -19,11 +20,12 @@ def odds_formulae(attackers, defenders, dice_sides=6, victory=0, tie=0, defeat=0
 	for n in np.arange(dice_sides)+1:
 	    victory += (dice_sides**attackers-n**attackers)/dice_sides**(attackers+defenders)
 	defeat = 1 - victory
+	units_lost = (defeat+tie) / (victory + tie)
     else:
 	print "Automatically switching to lookup-method to determine odds as your specified attacker and defender values have no corresponding odds formula."
-	victory, tie, defeat = odds_lookup(attackers, defenders, dice_sides, victory, tie, defeat)
+	victory, tie, defeat, units_lost = odds_lookup(attackers, defenders, dice_sides, victory, tie, defeat)
     
-    return victory, tie, defeat
+    return victory, tie, defeat, units_lost
     
 def odds_lookup(attackers, defenders, dice_sides=6, victory=0, tie=0, defeat=0):
     # The function has only been tested for attackers in (1,2,3) and defenders in (1,2).
@@ -51,5 +53,7 @@ def odds_lookup(attackers, defenders, dice_sides=6, victory=0, tie=0, defeat=0):
     if victory+tie+defeat != 1.0:
 	raise ValueError("The sum of probabilities does not equal 1. Please ceheck your input and that the function supports it.")
     
-    return victory, tie, defeat
+    units_lost = (defeat+tie) / (victory + tie)
+    
+    return victory, tie, defeat, units_lost
 
