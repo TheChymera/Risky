@@ -22,7 +22,7 @@ def odds_formulae(attackers, defenders, dice_sides=6, victory=0, tie=0, defeat=0
 	defeat = 1 - victory
 	units_lost = (defeat+tie) / (victory + tie)
     else:
-	print "Automatically switching to lookup-method to determine odds as your specified attacker and defender values have no corresponding odds formula."
+	print "[[Automatically switching to lookup-method to determine odds as your specified attacker and defender values have no corresponding odds formula.]]\n"
 	victory, tie, defeat, units_lost = odds_lookup(attackers, defenders, dice_sides, victory, tie, defeat)
     
     return victory, tie, defeat, units_lost
