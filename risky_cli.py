@@ -33,8 +33,8 @@ if args.force_lookup:
 else:
     victory, tie, defeat, units_lost = one_attack.odds_formulae(args.attackers, args.defenders, dice_sides=args.dice_sides)
 
-print"Using a"+n+" "+str(args.dice_sides)+"-sided dice, "+str(args.attackers)+" attacker"+attackers_s+", and "+str(args.defenders)+" defender"+defenders_s+", your outcome odds are:"
-print "Victory =",victory
-print "    Tie =",tie
-print " Defeat =",defeat
-print "\nYour expected unit attrition is",units_lost,"per 1 unit lost by the defender."
+print("Using a"+n+" "+str(args.dice_sides)+"-sided dice, "+str(args.attackers)+" attacker"+attackers_s+", and "+str(args.defenders)+" defender"+defenders_s+", your outcome odds are:")
+print("Victory = "+str(victory))
+print("    Tie = "+str(tie))
+print(" Defeat = "+str(defeat))
+print("\nYour expected unit attrition is "+str(units_lost)+" per 1 unit lost by the defender.")
