@@ -2,7 +2,6 @@ from __future__ import division
 __author__ = 'Horea Christian'
 
 import numpy as np
-from itertools import product
 
 def odds_formulae(attackers, defenders, dice_sides=6, victory=0, tie=0, defeat=0):
     if attackers == 1 and defenders == 2:

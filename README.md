@@ -6,8 +6,12 @@ We use either formulaic odds calculation or explicit lookup from tables of all o
 
 A more in-depth explanation of the formulas, as well as reference odds tables for popular game configurations can be found in the script's [tutorial page](http://chymeric.eu/blog/2014/07/23/per-attack-risk-dice-odds/). 
 
+##Dependencies
+
+* **[NumPy](https://en.wikipedia.org/wiki/Numpy)** - in [Portage](http://en.wikipedia.org/wiki/Portage_(software)) as **app-text/texlive**
+
 ##Usage
-From the containing folder:
+Run the script from the containing folder:
 ```
 python risky_cli.py [-h] [-f] [-d DICE_SIDES] attackers defenders
 ```
